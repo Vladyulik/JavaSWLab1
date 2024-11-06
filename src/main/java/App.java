@@ -55,5 +55,21 @@ public class App {
             System.out.println();
         }
         System.out.println();
+
+        // Get sum of min elements from each row
+        int sum = 0;
+        for (short[] row : matrix_C) {
+            short min = row[0];
+            for (short value : row) {
+                if (value < min) {
+                    min = value;
+                }
+            }
+            sum += min;
+        }
+
+        // Print result
+        System.out.println("Sum of min elements from each row of matrix C =");
+        System.out.println(sum);
     }
 }
