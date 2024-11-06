@@ -34,5 +34,26 @@ public class App {
                 System.exit(1);
             }
         }
+
+        // Perform XOR operation
+        int rows = MATRIX_A.length;
+        int cols = MATRIX_A[0].length;
+        short[][] matrix_C = new short[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix_C[i][j] = (short) (MATRIX_A[i][j] ^ MATRIX_B[i][j]);
+            }
+        }
+
+        // Print result
+        System.out.println("MATRIX_A XOR MATRIX_B =");
+        for (short[] row : matrix_C) {
+            for (short value : row) {
+                System.out.print(String.format("%5d", value) + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
