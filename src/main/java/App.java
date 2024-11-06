@@ -11,5 +11,28 @@ public class App {
             {0, 42, 455},
             {-256, -143, 300}
         };
+
+        // Check matrices before operation
+        if (MATRIX_A == null || MATRIX_B == null) {
+            System.out.println("Matrices should not be null");
+            System.exit(1);
+        }
+
+        if (!(MATRIX_A instanceof short[][]) || !(MATRIX_B instanceof short[][])) {
+            System.out.println("Matrices should be short[][]");
+            System.exit(1);
+        }
+
+        if (MATRIX_A.length != MATRIX_B.length) {
+            System.out.println("Number of rows should be the same");
+            System.exit(1);
+        }
+
+        for (int i = 0; i < MATRIX_A.length; i++) {
+            if (MATRIX_A[i].length != MATRIX_B[i].length) {
+                System.out.println("Number of columns should be the same");
+                System.exit(1);
+            }
+        }
     }
 }
